@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+    <!-- 배경 이미지 -->
+    <div class="background"></div>
+    <div class="background">
+  <img class="swu-image" src="swu.svg" alt="SWU Logo">
+  
+</div>
+    <script src="main.js"></script>
+
+    <div class="container">
+        <div class="title">슈니즈를_찾아라!</div>
+        <div class="subtitle">크리스마스 스크래치카드 에디션</div>
+        <div class="description">꼭꼭 숨어있는 슈니즈를 찾아줘!</div>
+    </div>
+</body>
+<style>
+    .snow {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 3px white;
+  }
+
+</style>
+<script>
+    for (let i = 0; i < 200; i++) {
+      const snow = document.createElement("div");
+      snow.className = "snow";
+      snow.style.opacity = Math.random(); // 무작위 투명도
+  
+      const startX = Math.random() * 100; // 시작 X 좌표 무작위
+      const endX = startX + (Math.random() * 50 - 100); // 종료 X 좌표 무작위
+      const scale = Math.max(Math.random(), 0.1); // 무작위 크기
+  
+      const keyframe = [
+        { transform: `translate(${startX}vw, 0) scale(${scale})` },
+        { transform: `translate(${endX}vw, 100vh) scale(${scale})` },
+      ];
+  
+      const option = {
+        duration: 15000 + Math.random() * 5000, // 무작위 지속 시간
+        easing: "linear",
+        iterations: Infinity,
+        delay: -Math.random() * 20 * 1000, // 무작위 지연 시간
+      };
+  
+      snow.animate(keyframe, option);
+      document.body.appendChild(snow);
+    }
+  </script>
+</html>

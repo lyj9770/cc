@@ -1,0 +1,118 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 위로 정렬 */
+  background-color: #ffffff;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+/* @font-face로 로컬 폰트 적용 */
+@font-face {
+  font-family: 'DungGeunMo2';
+  src: url('DungGeunMo2.otf') format('opentype');
+}
+
+html, body {
+  font-family: 'DungGeunMo2', sans-serif; /* 폰트 적용 */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #121212;
+  background-color: #121212;
+}
+
+canvas {
+  display: block;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 텍스트 상단 정렬 */
+  align-items: center;
+  position: absolute;
+  padding: 0 10%;
+  padding-top: 50px; /* 상단 여백을 추가하여 텍스트를 내려줌 */
+}
+
+.title {
+  font-size: 3em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.title:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  padding-top: 20px; /* 상단 여백을 추가하여 텍스트를 내려줌 */
+}
+
+.description {
+  font-size: 1.2em;
+  opacity: 0.66;
+  max-width: 90%;
+  margin-top: -5px;
+}
+
+/* 화면 전체에 배경 이미지 적용 */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('main_bg.svg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0; /* 다른 요소보다 뒤로 보내기 */
+}
+
+/* swu.svg 이미지 중앙 배치 */
+.swu-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 화면 중앙에 정렬 */
+    width: 80%; /* 화면 크기에 맞게 조정 */
+    max-width: 500px; /* 최대 크기를 지정 */
+  }
+
+body {
+  background-color: #2e3b2f; /* 배경색 */
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5em;
+  }
+
+  .subtitle {
+    font-size: 1.5em;
+  }
+
+  .description {
+    font-size: 1em;
+  }
+}

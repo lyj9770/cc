@@ -1,0 +1,27 @@
+/* @font-face로 로컬 폰트 적용 */
+@font-face {
+  font-family: 'DungGeunMo2';
+  src: url('DungGeunMo2.otf') format('opentype');
+}
+
+html, body {
+  font-family: 'DungGeunMo2', sans-serif; /* 폰트 적용 */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #121212;
+  background-color: #121212;
+}
+
+canvas {
+  display: block;
+}
+.container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 비율 (9/16 * 100 = 56.25%) */
+  background-size: cover;
+  background-image: url('main_bg.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
